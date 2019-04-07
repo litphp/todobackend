@@ -1,0 +1,36 @@
+{
+    "name": "litphp/project",
+    "description": "A minimal boilerplate for litphp project",
+    "license": "ISC",
+    "authors": [
+        {
+            "name": "McFog Wang",
+            "email": "mcfogw@gmail.com"
+        }
+    ],
+    "require": {
+        "litphp/router-fast-route": "^0.9.0@dev",
+        "litphp/runner-zend-sapi": "^0.9.0@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Todo\\": "src/"
+        }
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "scripts": {
+        "post-create-project-cmd": [
+            "Todo\\Bootstrap::postCreateProject",
+            "@composer dump-autoload"
+        ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.9.x-dev"
+        }
+    },
+    "require-dev": {
+        "league/climate": "^3.5"
+    }
+}
