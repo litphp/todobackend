@@ -1,6 +1,6 @@
 {
-    "name": "litphp/project",
-    "description": "A minimal boilerplate for litphp project",
+    "name": "litphp/todobackend",
+    "description": "A todobackend implementation",
     "license": "ISC",
     "authors": [
         {
@@ -10,7 +10,9 @@
     ],
     "require": {
         "litphp/router-fast-route": "^0.9.0@dev",
-        "litphp/runner-zend-sapi": "^0.9.0@dev"
+        "litphp/runner-zend-sapi": "^0.9.0@dev",
+        "ext-pdo": "*",
+        "middlewares/payload": "^2.1"
     },
     "autoload": {
         "psr-4": {
@@ -19,18 +21,12 @@
     },
     "prefer-stable": true,
     "minimum-stability": "dev",
-    "scripts": {
-        "post-create-project-cmd": [
-            "Todo\\Bootstrap::postCreateProject",
-            "@composer dump-autoload"
-        ]
-    },
     "extra": {
         "branch-alias": {
             "dev-master": "0.9.x-dev"
         }
     },
     "require-dev": {
-        "league/climate": "^3.5"
+        "robmorgan/phinx": "^0.10.6"
     }
 }
