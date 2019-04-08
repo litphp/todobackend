@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e07eeca0231aac003ffd70e4d383df27",
+    "content-hash": "5711773d36e3fc5b991d1bafe8646541",
     "packages": [
         {
             "name": "http-interop/http-factory-diactoros",
@@ -61,13 +61,13 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/litphp/lit-air.git",
-                "reference": "2b06018d8ee0d9dc2b3bb74763b3c05b5bf928d6"
+                "url": "https://github.com/litphp/air.git",
+                "reference": "c0ad01e2c448e2bd6145fd9d5aff41c5d2ccbb25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/litphp/lit-air/zipball/2b06018d8ee0d9dc2b3bb74763b3c05b5bf928d6",
-                "reference": "2b06018d8ee0d9dc2b3bb74763b3c05b5bf928d6",
+                "url": "https://api.github.com/repos/litphp/air/zipball/c0ad01e2c448e2bd6145fd9d5aff41c5d2ccbb25",
+                "reference": "c0ad01e2c448e2bd6145fd9d5aff41c5d2ccbb25",
                 "shasum": ""
             },
             "require": {
@@ -105,25 +105,25 @@
                 }
             ],
             "description": "simple & smart dependency injection",
-            "time": "2019-04-07T05:09:12+00:00"
+            "time": "2019-04-08T17:20:34+00:00"
         },
         {
             "name": "litphp/bolt",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/litphp/lit-bolt.git",
-                "reference": "e2660f25455346dd35bf5b23f8b1c60e46f45507"
+                "url": "https://github.com/litphp/bolt.git",
+                "reference": "8f0efaf1ad732b9b010056cea589990e0c1c4f6f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/litphp/lit-bolt/zipball/e2660f25455346dd35bf5b23f8b1c60e46f45507",
-                "reference": "e2660f25455346dd35bf5b23f8b1c60e46f45507",
+                "url": "https://api.github.com/repos/litphp/bolt/zipball/8f0efaf1ad732b9b010056cea589990e0c1c4f6f",
+                "reference": "8f0efaf1ad732b9b010056cea589990e0c1c4f6f",
                 "shasum": ""
             },
             "require": {
                 "litphp/air": "^0.9@dev",
-                "litphp/lit": "^0.9@dev",
+                "litphp/voltage": "^0.9@dev",
                 "symfony/event-dispatcher": "^4.0"
             },
             "require-dev": {
@@ -163,73 +163,20 @@
                 }
             ],
             "description": "litphp micro-framework",
-            "time": "2019-04-07T05:09:31+00:00"
-        },
-        {
-            "name": "litphp/lit",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/litphp/lit.git",
-                "reference": "88dd5e40d2158b2b4b41855e5918d8525af158ee"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/litphp/lit/zipball/88dd5e40d2158b2b4b41855e5918d8525af158ee",
-                "reference": "88dd5e40d2158b2b4b41855e5918d8525af158ee",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "litphp/nimo": "^0.9@dev",
-                "php": "^7.1",
-                "psr/http-factory": "^1.0"
-            },
-            "require-dev": {
-                "http-interop/http-factory-diactoros": "^1.0",
-                "phpunit/phpunit": "^6.5",
-                "zendframework/zend-diactoros": "^1.8",
-                "zendframework/zend-httphandlerrunner": "^1.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.9.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Lit\\Core\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "McFog Wang",
-                    "email": "mcfogw@gmail.com"
-                }
-            ],
-            "description": "yet another PHP Framework with extremely tiny codebase",
-            "time": "2019-04-07T05:09:48+00:00"
+            "time": "2019-04-07T09:59:09+00:00"
         },
         {
             "name": "litphp/nexus",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/litphp/lit-nexus.git",
-                "reference": "abda55cc96394d0258e916c1d00682f04e8f5ee7"
+                "url": "https://github.com/litphp/nexus.git",
+                "reference": "7cc50c3eba63c3accabf2e3510a2a0a12e07f64c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/litphp/lit-nexus/zipball/abda55cc96394d0258e916c1d00682f04e8f5ee7",
-                "reference": "abda55cc96394d0258e916c1d00682f04e8f5ee7",
+                "url": "https://api.github.com/repos/litphp/nexus/zipball/7cc50c3eba63c3accabf2e3510a2a0a12e07f64c",
+                "reference": "7cc50c3eba63c3accabf2e3510a2a0a12e07f64c",
                 "shasum": ""
             },
             "suggest": {
@@ -260,7 +207,7 @@
                 }
             ],
             "description": "misc interfaces, traits, and derived classes for lit components",
-            "time": "2019-04-07T05:10:52+00:00"
+            "time": "2019-04-07T09:50:21+00:00"
         },
         {
             "name": "litphp/nimo",
@@ -268,12 +215,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/litphp/nimo.git",
-                "reference": "8c93f812ed0021073f77b967309f5fd8c3f8317f"
+                "reference": "2781e3b772b50a55024e2f12d4cccb1a02837dff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/litphp/nimo/zipball/8c93f812ed0021073f77b967309f5fd8c3f8317f",
-                "reference": "8c93f812ed0021073f77b967309f5fd8c3f8317f",
+                "url": "https://api.github.com/repos/litphp/nimo/zipball/2781e3b772b50a55024e2f12d4cccb1a02837dff",
+                "reference": "2781e3b772b50a55024e2f12d4cccb1a02837dff",
                 "shasum": ""
             },
             "require": {
@@ -321,7 +268,7 @@
                 "psr-15",
                 "psr-7"
             ],
-            "time": "2019-04-07T05:11:13+00:00"
+            "time": "2019-04-07T10:00:19+00:00"
         },
         {
             "name": "litphp/router-fast-route",
@@ -329,17 +276,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/litphp/router-fast-route.git",
-                "reference": "1d460607a55ea1c5ba761daf348ac298d6550b02"
+                "reference": "f5b0b8b17c93b2214b57eb2f55d368bb3227e068"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/litphp/router-fast-route/zipball/1d460607a55ea1c5ba761daf348ac298d6550b02",
-                "reference": "1d460607a55ea1c5ba761daf348ac298d6550b02",
+                "url": "https://api.github.com/repos/litphp/router-fast-route/zipball/f5b0b8b17c93b2214b57eb2f55d368bb3227e068",
+                "reference": "f5b0b8b17c93b2214b57eb2f55d368bb3227e068",
                 "shasum": ""
             },
             "require": {
-                "litphp/lit": "^0.9@dev",
                 "litphp/nexus": "^0.9@dev",
+                "litphp/voltage": "^0.9@dev",
                 "nikic/fast-route": "^1.3"
             },
             "require-dev": {
@@ -367,7 +314,7 @@
                 }
             ],
             "description": "Lit router utilizing fast-route",
-            "time": "2019-04-07T05:11:33+00:00"
+            "time": "2019-04-07T10:00:37+00:00"
         },
         {
             "name": "litphp/runner-zend-sapi",
@@ -417,6 +364,59 @@
                 }
             ],
             "time": "2019-04-05T08:00:24+00:00"
+        },
+        {
+            "name": "litphp/voltage",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/litphp/voltage.git",
+                "reference": "bbb62457c28aaddcda827aea4cde9326211657da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/litphp/voltage/zipball/bbb62457c28aaddcda827aea4cde9326211657da",
+                "reference": "bbb62457c28aaddcda827aea4cde9326211657da",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "litphp/nimo": "^0.9@dev",
+                "php": "^7.1",
+                "psr/http-factory": "^1.0"
+            },
+            "require-dev": {
+                "http-interop/http-factory-diactoros": "^1.0",
+                "phpunit/phpunit": "^6.5",
+                "zendframework/zend-diactoros": "^1.8",
+                "zendframework/zend-httphandlerrunner": "^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.9.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Lit\\Voltage\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "ISC"
+            ],
+            "authors": [
+                {
+                    "name": "McFog Wang",
+                    "email": "mcfogw@gmail.com"
+                }
+            ],
+            "description": "Fundamental application structure for Lit",
+            "time": "2019-04-07T10:09:35+00:00"
         },
         {
             "name": "middlewares/payload",
