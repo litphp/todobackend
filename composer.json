@@ -9,6 +9,7 @@
         }
     ],
     "require": {
+        "litphp/bolt": "^0.9.0@dev",
         "litphp/router-fast-route": "^0.9.0@dev",
         "litphp/runner-zend-sapi": "^0.9.0@dev",
         "ext-pdo": "*",

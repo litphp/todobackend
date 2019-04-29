@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace Todo\Traits;
 
-use Lit\Core\ThrowableResponse;
+use Lit\Router\FastRoute\ArgumentHandler\RouteArgumentBag;
+use Lit\Voltage\ThrowableResponse;
 use Psr\Http\Message\ServerRequestInterface;
 use Todo\Entity\TodoEntity;
 use Zend\Diactoros\Response\TextResponse;
@@ -18,7 +19,7 @@ trait GetTodoFromRequest
 
     protected function getTodoEntity(): ?TodoEntity
     {
-        $id = intval($this->request->getAttribute('id'));
+        $id = intval(RouteArgumentBag::fromRequest($this->request)->get('id'));
         if (!$id) {
             throw new ThrowableResponse(new TextResponse('cannot find todo', 400));
         }
