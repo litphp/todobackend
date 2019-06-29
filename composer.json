@@ -21,7 +21,6 @@
         }
     },
     "prefer-stable": true,
-    "minimum-stability": "RC",
     "require-dev": {
         "robmorgan/phinx": "^0.10.6"
     }
