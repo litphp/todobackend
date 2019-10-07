@@ -11,6 +11,7 @@ use Zend\Diactoros\Response\JsonResponse;
 
 class PatchTodoAction extends BaseAction
 {
+    const ROUTE = [self::METHOD_PATCH, '/{id:\d+}'];
     use GetTodoFromRequest;
 
     protected function main(): ResponseInterface

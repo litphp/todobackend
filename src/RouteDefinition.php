@@ -4,23 +4,26 @@ namespace Todo;
 
 use FastRoute\RouteCollector;
 use Lit\Router\FastRoute\FastRouteDefinition;
-use Todo\Action\ClearTodoAction;
-use Todo\Action\DeleteTodoAction;
-use Todo\Action\GetTodoAction;
-use Todo\Action\ListTodoAction;
-use Todo\Action\PatchTodoAction;
-use Todo\Action\PostTodoAction;
+use Symfony\Component\Finder\Finder;
 
 class RouteDefinition extends FastRouteDefinition
 {
     public function __invoke(RouteCollector $routeCollector): void
     {
-        $routeCollector->get('/', ListTodoAction::class);
-        $routeCollector->post('/', PostTodoAction::class);
-        $routeCollector->delete('/', ClearTodoAction::class);
+        $finder = Finder::create()
+            ->files()
+            ->in(__DIR__ . '/Action')
+            ->name('*Action.php');
 
-        $routeCollector->get('/{id:\d+}', GetTodoAction::class);
-        $routeCollector->patch('/{id:\d+}', PatchTodoAction::class);
-        $routeCollector->delete('/{id:\d+}', DeleteTodoAction::class);
+        foreach ($finder->getIterator() as $file) {
+            $cls = implode('\\', [
+                __NAMESPACE__,
+                'Action',
+                substr($file->getBasename(), 0, -4) // .php
+            ]);
+            if (defined("$cls::ROUTE")) {
+                $routeCollector->addRoute($cls::ROUTE[0], $cls::ROUTE[1], $cls);
+            }
+        }
     }
 }

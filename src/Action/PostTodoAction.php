@@ -10,6 +10,7 @@ use Todo\Traits\InjectTodoRepo;
 
 class PostTodoAction extends BaseAction
 {
+    const ROUTE = [self::METHOD_POST, '/'];
     use InjectTodoRepo;
 
     protected function main(): ResponseInterface

@@ -12,6 +12,7 @@ use Zend\Diactoros\Response\JsonResponse;
 
 class DeleteTodoAction extends BaseAction
 {
+    const ROUTE = [self::METHOD_DELETE, '/{id:\d+}'];
     use GetTodoFromRequest;
 
     protected function main(): ResponseInterface

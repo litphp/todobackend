@@ -10,6 +10,7 @@ use Todo\Traits\InjectTodoRepo;
 
 class ClearTodoAction extends BaseAction
 {
+    const ROUTE = [self::METHOD_DELETE, '/'];
     use InjectTodoRepo;
 
     protected function main(): ResponseInterface

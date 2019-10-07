@@ -13,7 +13,9 @@
         "litphp/router-fast-route": "^1.0@dev",
         "litphp/runner-laminas-sapi": "^1.0@dev",
         "ext-pdo": "*",
-        "middlewares/payload": "^2.1"
+        "middlewares/payload": "^2.1",
+        "symfony/finder": "^4.3",
+        "fig/http-message-util": "^1.1"
     },
     "autoload": {
         "psr-4": {

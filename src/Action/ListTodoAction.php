@@ -11,6 +11,7 @@ use Todo\Traits\InjectTodoRepo;
 
 class ListTodoAction extends BaseAction
 {
+    const ROUTE = [self::METHOD_GET, '/'];
     use InjectTodoRepo;
 
     protected function main(): ResponseInterface

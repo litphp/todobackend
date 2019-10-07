@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace Todo;
 
+use Fig\Http\Message\RequestMethodInterface;
 use Lit\Bolt\BoltAbstractAction;
 use Todo\Entity\TodoEntity;
 
-abstract class BaseAction extends BoltAbstractAction
+abstract class BaseAction extends BoltAbstractAction implements RequestMethodInterface
 {
     /**
      * @var string

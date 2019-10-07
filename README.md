@@ -5,6 +5,8 @@ LitPHP
 
 [LitPHP Home](http://litphp.github.io/)
 
+This branch demostrates a simple route discovery implementation. Check [diff](https://github.com/litphp/todobackend/compare/cookbook/route-discovery)
+
 --------------
 
 A demo todobackend implementation
