@@ -5,6 +5,8 @@ LitPHP
 
 [LitPHP Home](http://litphp.github.io/)
 
+This branch demostrates how to integrate doctrine. Check [diff](https://github.com/litphp/todobackend/compare/cookbook/doctrine)
+
 --------------
 
 A demo todobackend implementation

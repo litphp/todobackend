@@ -4,101 +4,66 @@ declare(strict_types=1);
 
 namespace Todo\Repository;
 
+use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Persistence\ObjectRepository;
 use Todo\Entity\TodoEntity;
 
 class TodoRepo
 {
-    private const SQL_INSERT = <<<'SQL'
-INSERT INTO todo (title, completed, priority) VALUES (?,?,?);
-SQL;
-    private const SQL_UPDATE = <<<'SQL'
-UPDATE todo SET title = ?, completed = ?, priority = ? WHERE id = ?;
-SQL;
-    private const SQL_SELECT_ALL = <<<'SQL'
-SELECT id, title, completed, priority
-FROM todo;
-SQL;
-    private const SQL_FIND = <<<'SQL'
-SELECT id, title, completed, priority
-FROM todo
-WHERE id=?;
-SQL;
-    private const SQL_TRUNCATE = <<<'SQL'
-DELETE FROM todo;
-SQL;
-    private const SQL_DELETE = <<<'SQL'
-DELETE FROM todo WHERE id=?;
-SQL;
-
     /**
-     * @var \PDO
+     * @var EntityManagerInterface
      */
-    private $pdo;
+    private $entityManager;
 
     /**
      * TodoRepo constructor.
-     * @param \PDO $pdo
      */
-    public function __construct(\PDO $pdo)
+    public function __construct(EntityManagerInterface $entityManager)
     {
-        $this->pdo = $pdo;
+        $this->entityManager = $entityManager;
     }
 
     public function save(TodoEntity $todo)
     {
-        if ($todo->id) {
-            $statement = self::SQL_UPDATE;
-            $values = [$todo->title, $todo->completed, $todo->priority, $todo->id];
-        } else {
-            $statement = self::SQL_INSERT;
-            $values = [$todo->title, $todo->completed, $todo->priority];
-        }
-
-        $stmt = $this->pdo->prepare($statement);
-        $ok = $stmt->execute($values);
-        if (!$ok) {
-            throw new \Exception('failed to execute save');
-        }
-
-        if (!$todo->id) {
-            $todo->id = $this->pdo->lastInsertId();
-        }
+        $this->entityManager->persist($todo);
+        $this->entityManager->flush();
     }
 
 
     public function remove(TodoEntity $todo)
     {
-        if(!$todo->id) {
-            return;
-        }
-
-        $this->pdo->prepare(self::SQL_DELETE)->execute([$todo->id]);
+        $this->entityManager->remove($todo);
+        $this->entityManager->flush();
     }
 
     public function list()
     {
-        $statement = self::SQL_SELECT_ALL;
-        $query = $this->pdo->query($statement, \PDO::FETCH_CLASS, TodoEntity::class);
-
-        return $query->fetchAll();
+        return $this->repo()->findAll();
     }
 
     public function find(int $id): ?TodoEntity
     {
-        $statement = self::SQL_FIND;
-        $query = $this->pdo->query($statement, \PDO::FETCH_CLASS, TodoEntity::class);
-        $query->execute([$id]);
+        $obj = $this->entityManager->find(TodoEntity::class, $id);
+        assert($obj===null || $obj instanceof TodoEntity);
 
-        return $query->fetch() ?: null;
+        return $obj;
     }
 
     public function truncate()
     {
-        $this->pdo->exec(self::SQL_TRUNCATE);
+        $this->entityManager->createQuery('DELETE FROM '.TodoEntity::class)->execute();
     }
 
     public function spawn(): TodoEntity
     {
         return new TodoEntity();
+    }
+
+    /**
+     * @return ObjectRepository
+     */
+    private function repo(): ObjectRepository
+    {
+        return $this->entityManager->getRepository(TodoEntity::class);
     }
 }
