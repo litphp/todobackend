@@ -5,6 +5,8 @@ LitPHP
 
 [LitPHP Home](http://litphp.github.io/)
 
+This branch demostrates roadrunner integration. Check [diff](https://github.com/litphp/todobackend/compare/cookbook/roadrunner)
+
 --------------
 
 A demo todobackend implementation

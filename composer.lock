@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d003343dc66bbd7bd8870f8e31eb8b05",
+    "content-hash": "8f658cc7d7774cfd13262dfa382480db",
     "packages": [
         {
             "name": "litphp/air",
@@ -266,26 +266,28 @@
             "time": "2019-09-21T11:22:40+00:00"
         },
         {
-            "name": "litphp/runner-zend-sapi",
+            "name": "litphp/runner-road-runner",
             "version": "v0.9.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/litphp/runner-zend-sapi.git",
-                "reference": "110279e7702fd9fcd08779450e010ffb80cec46c"
+                "url": "https://github.com/litphp/runner-road-runner.git",
+                "reference": "fb8406cced6b72c138884e4b74f966837edfb94c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/litphp/runner-zend-sapi/zipball/110279e7702fd9fcd08779450e010ffb80cec46c",
-                "reference": "110279e7702fd9fcd08779450e010ffb80cec46c",
+                "url": "https://api.github.com/repos/litphp/runner-road-runner/zipball/fb8406cced6b72c138884e4b74f966837edfb94c",
+                "reference": "fb8406cced6b72c138884e4b74f966837edfb94c",
                 "shasum": ""
             },
             "require": {
                 "litphp/bolt": "^0.9",
-                "zendframework/zend-diactoros": "^2.0",
-                "zendframework/zend-httphandlerrunner": "^1.0"
+                "spiral/roadrunner": "^1.2"
             },
             "require-dev": {
-                "phpunit/phpunit": "^7.5"
+                "phpstan/phpstan-phpunit": "^0.11.2",
+                "phpstan/phpstan-shim": "^0.11.7",
+                "phpunit/phpunit": "^7.5",
+                "squizlabs/php_codesniffer": "^3.4"
             },
             "type": "library",
             "extra": {
@@ -295,7 +297,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Lit\\Runner\\ZendSapi\\": ""
+                    "Lit\\Runner\\RoadRunner\\": ""
                 },
                 "exclude-from-classmap": [
                     "/Tests/"
@@ -311,7 +313,7 @@
                     "email": "mcfogw@gmail.com"
                 }
             ],
-            "time": "2019-09-21T11:22:59+00:00"
+            "time": "2019-10-20T15:42:18+00:00"
         },
         {
             "name": "litphp/voltage",
@@ -819,6 +821,165 @@
             "time": "2018-10-30T17:12:04+00:00"
         },
         {
+            "name": "spiral/goridge",
+            "version": "v2.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spiral/goridge.git",
+                "reference": "4d5c763886dd0a1e45b1a7d1f99d180cf1a7a7c4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spiral/goridge/zipball/4d5c763886dd0a1e45b1a7d1f99d180cf1a7a7c4",
+                "reference": "4d5c763886dd0a1e45b1a7d1f99d180cf1a7a7c4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~6.0"
+            },
+            "type": "goridge",
+            "autoload": {
+                "psr-4": {
+                    "Spiral\\Goridge\\": "php-src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anton Titov / Wolfy-J",
+                    "email": "wolfy.jd@gmail.com"
+                }
+            ],
+            "description": "High-performance PHP-to-Golang RPC bridge",
+            "time": "2019-04-01T14:30:26+00:00"
+        },
+        {
+            "name": "spiral/roadrunner",
+            "version": "v1.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spiral/roadrunner.git",
+                "reference": "3e335a7c62a0f67b6290fc4982e541eeb93d483c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spiral/roadrunner/zipball/3e335a7c62a0f67b6290fc4982e541eeb93d483c",
+                "reference": "3e335a7c62a0f67b6290fc4982e541eeb93d483c",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1",
+                "psr/http-factory": "^1.0",
+                "psr/http-message": "^1.0",
+                "spiral/goridge": "^2.0",
+                "symfony/console": "^2.5.0 || ^3.0.0 || ^4.0.0",
+                "zendframework/zend-diactoros": "^1.3 || ^2.0"
+            },
+            "bin": [
+                "bin/rr"
+            ],
+            "type": "server",
+            "autoload": {
+                "psr-4": {
+                    "Spiral\\RoadRunner\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anton Titov / Wolfy-J",
+                    "email": "wolfy.jd@gmail.com"
+                },
+                {
+                    "name": "RoadRunner Community",
+                    "homepage": "https://github.com/spiral/roadrunner/graphs/contributors"
+                }
+            ],
+            "description": "High-performance PHP application server, load-balancer and process manager written in Golang",
+            "time": "2019-10-22T15:48:38+00:00"
+        },
+        {
+            "name": "symfony/console",
+            "version": "v4.2.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/console.git",
+                "reference": "fc2e274aade6567a750551942094b2145ade9b6c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/console/zipball/fc2e274aade6567a750551942094b2145ade9b6c",
+                "reference": "fc2e274aade6567a750551942094b2145ade9b6c",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3",
+                "symfony/contracts": "^1.0",
+                "symfony/polyfill-mbstring": "~1.0"
+            },
+            "conflict": {
+                "symfony/dependency-injection": "<3.4",
+                "symfony/process": "<3.3"
+            },
+            "provide": {
+                "psr/log-implementation": "1.0"
+            },
+            "require-dev": {
+                "psr/log": "~1.0",
+                "symfony/config": "~3.4|~4.0",
+                "symfony/dependency-injection": "~3.4|~4.0",
+                "symfony/event-dispatcher": "~3.4|~4.0",
+                "symfony/lock": "~3.4|~4.0",
+                "symfony/process": "~3.4|~4.0"
+            },
+            "suggest": {
+                "psr/log": "For using the console logger",
+                "symfony/event-dispatcher": "",
+                "symfony/lock": "",
+                "symfony/process": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Console\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Console Component",
+            "homepage": "https://symfony.com",
+            "time": "2019-07-24T17:13:20+00:00"
+        },
+        {
             "name": "symfony/contracts",
             "version": "v1.1.7",
             "source": {
@@ -960,6 +1121,65 @@
             "time": "2019-06-26T06:46:55+00:00"
         },
         {
+            "name": "symfony/polyfill-mbstring",
+            "version": "v1.12.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-mbstring.git",
+                "reference": "b42a2f66e8f1b15ccf25652c3424265923eb4f17"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/b42a2f66e8f1b15ccf25652c3424265923eb4f17",
+                "reference": "b42a2f66e8f1b15ccf25652c3424265923eb4f17",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "suggest": {
+                "ext-mbstring": "For best performance"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.12-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Mbstring\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for the Mbstring extension",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "mbstring",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "time": "2019-08-06T08:03:45+00:00"
+        },
+        {
             "name": "zendframework/zend-diactoros",
             "version": "2.1.5",
             "source": {
@@ -1025,61 +1245,6 @@
                 "psr-7"
             ],
             "time": "2019-10-10T17:38:20+00:00"
-        },
-        {
-            "name": "zendframework/zend-httphandlerrunner",
-            "version": "1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/zendframework/zend-httphandlerrunner.git",
-                "reference": "75fb12751fe9d6e392cce1ee0d687dacae2db787"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-httphandlerrunner/zipball/75fb12751fe9d6e392cce1ee0d687dacae2db787",
-                "reference": "75fb12751fe9d6e392cce1ee0d687dacae2db787",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1",
-                "psr/http-message": "^1.0",
-                "psr/http-message-implementation": "^1.0",
-                "psr/http-server-handler": "^1.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^7.0.2",
-                "zendframework/zend-coding-standard": "~1.0.0",
-                "zendframework/zend-diactoros": "^1.7 || ^2.1.1"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.1.x-dev",
-                    "dev-develop": "1.2.x-dev"
-                },
-                "zf": {
-                    "config-provider": "Zend\\HttpHandlerRunner\\ConfigProvider"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Zend\\HttpHandlerRunner\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "Execute PSR-15 RequestHandlerInterface instances and emit responses they generate.",
-            "keywords": [
-                "ZendFramework",
-                "components",
-                "expressive",
-                "psr-15",
-                "psr-7",
-                "zf"
-            ],
-            "time": "2019-02-19T18:20:34+00:00"
         }
     ],
     "packages-dev": [
@@ -1653,78 +1818,6 @@
             "time": "2019-09-19T15:51:53+00:00"
         },
         {
-            "name": "symfony/console",
-            "version": "v4.2.11",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/console.git",
-                "reference": "fc2e274aade6567a750551942094b2145ade9b6c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/fc2e274aade6567a750551942094b2145ade9b6c",
-                "reference": "fc2e274aade6567a750551942094b2145ade9b6c",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1.3",
-                "symfony/contracts": "^1.0",
-                "symfony/polyfill-mbstring": "~1.0"
-            },
-            "conflict": {
-                "symfony/dependency-injection": "<3.4",
-                "symfony/process": "<3.3"
-            },
-            "provide": {
-                "psr/log-implementation": "1.0"
-            },
-            "require-dev": {
-                "psr/log": "~1.0",
-                "symfony/config": "~3.4|~4.0",
-                "symfony/dependency-injection": "~3.4|~4.0",
-                "symfony/event-dispatcher": "~3.4|~4.0",
-                "symfony/lock": "~3.4|~4.0",
-                "symfony/process": "~3.4|~4.0"
-            },
-            "suggest": {
-                "psr/log": "For using the console logger",
-                "symfony/event-dispatcher": "",
-                "symfony/lock": "",
-                "symfony/process": ""
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "4.2-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Console\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Console Component",
-            "homepage": "https://symfony.com",
-            "time": "2019-07-24T17:13:20+00:00"
-        },
-        {
             "name": "symfony/filesystem",
             "version": "v4.3.5",
             "source": {
@@ -1829,65 +1922,6 @@
                 "ctype",
                 "polyfill",
                 "portable"
-            ],
-            "time": "2019-08-06T08:03:45+00:00"
-        },
-        {
-            "name": "symfony/polyfill-mbstring",
-            "version": "v1.12.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "b42a2f66e8f1b15ccf25652c3424265923eb4f17"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/b42a2f66e8f1b15ccf25652c3424265923eb4f17",
-                "reference": "b42a2f66e8f1b15ccf25652c3424265923eb4f17",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "suggest": {
-                "ext-mbstring": "For best performance"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.12-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Mbstring\\": ""
-                },
-                "files": [
-                    "bootstrap.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Grekas",
-                    "email": "p@tchwork.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony polyfill for the Mbstring extension",
-            "homepage": "https://symfony.com",
-            "keywords": [
-                "compatibility",
-                "mbstring",
-                "polyfill",
-                "portable",
-                "shim"
             ],
             "time": "2019-08-06T08:03:45+00:00"
         },

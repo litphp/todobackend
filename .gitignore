@@ -1,3 +1,4 @@
 vendor
 /configuration.php
 /db.sqlite3
+/rr

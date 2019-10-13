@@ -11,9 +11,9 @@
     "require": {
         "litphp/bolt": "^0.9",
         "litphp/router-fast-route": "^0.9",
-        "litphp/runner-zend-sapi": "^0.9",
         "ext-pdo": "*",
-        "middlewares/payload": "^2.1"
+        "middlewares/payload": "^2.1",
+        "litphp/runner-road-runner": "^0.9.0"
     },
     "autoload": {
         "psr-4": {
