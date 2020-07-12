@@ -15,7 +15,7 @@ class TodoAppConfiguration
     public static function default()
     {
         $configuration = [
-            C::join(BoltApp::class, MiddlewareInterface::class) => function (JsonPayload $jsonPayload) {
+            C::join(BoltApp::class, 'middleware') => function (JsonPayload $jsonPayload) {
                 return $jsonPayload;
             },
             C::join(BaseAction::class, '') => [

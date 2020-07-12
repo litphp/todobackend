@@ -9,9 +9,9 @@
         }
     ],
     "require": {
-        "litphp/bolt": "^0.9",
-        "litphp/router-fast-route": "^0.9",
-        "litphp/runner-zend-sapi": "^0.9",
+        "litphp/bolt": "^1.0@dev",
+        "litphp/router-fast-route": "^1.0@dev",
+        "litphp/runner-laminas-sapi": "^1.0@dev",
         "ext-pdo": "*",
         "middlewares/payload": "^2.1"
     },
@@ -21,6 +21,7 @@
         }
     },
     "prefer-stable": true,
+    "minimum-stability": "dev",
     "require-dev": {
         "robmorgan/phinx": "^0.10.6"
     }
